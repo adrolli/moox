@@ -11,8 +11,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Moox",
-            "email": "devs@moox.org",
+            "name": "Alf Drollinger",
+            "email": "alf@moox.org",
             "role": "Developer"
         }
     ],
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Moox\\Skeleton\\MooxSkeletonServiceProvider"
+                "Moox\\Skeleton\\SkeletonServiceProvider"
             ]
         }
     },

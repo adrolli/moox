@@ -7,7 +7,7 @@ namespace Moox\Skeleton;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MooxSkeletonServiceProvider extends PackageServiceProvider
+class SkeletonServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

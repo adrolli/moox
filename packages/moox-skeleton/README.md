@@ -2,6 +2,8 @@
 
 This template is used for generating all Moox packages.
 
+If you install it, it will completely work without beeing useful. Guaranteed!
+
 ## Installation
 
 You can install the package via composer:
@@ -33,7 +35,6 @@ Please review [our security policy](https://github.com/mooxphp/moox/security/pol
 
 ## Credits
 
--   Alf Drollinger - alf@drollinger.info
 -   [All Contributors](../../contributors)
 
 ## License

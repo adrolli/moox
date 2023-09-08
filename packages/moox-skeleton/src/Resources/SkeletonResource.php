@@ -49,7 +49,7 @@ class SkeletonResource extends Resource
                     ->label(__('skeleton::translations.failed'))
                     ->sortable(),
             ])
-            ->defaultSort('id', 'desc')
+            ->defaultSort('name', 'desc')
             ->actions([
                 EditAction::make(),
             ])
