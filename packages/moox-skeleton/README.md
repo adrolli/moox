@@ -13,14 +13,14 @@ composer require moox/skeleton
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="moox-skeleton-migrations"
+php artisan vendor:publish --tag="skeleton-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="moox-skeleton-config"
+php artisan vendor:publish --tag="skeleton-config"
 ```
 
 ## Changelog
@@ -33,8 +33,8 @@ Please review [our security policy](https://github.com/mooxphp/moox/security/pol
 
 ## Credits
 
-- Alf Drollinger - alf@drollinger.info
-- [All Contributors](../../contributors)
+-   Alf Drollinger - alf@drollinger.info
+-   [All Contributors](../../contributors)
 
 ## License
 
