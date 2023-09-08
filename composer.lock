@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26dc52cbf405f09918d4b18c97c1239a",
+    "content-hash": "2d637049c41351859934cf1c081fbd8f",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -3305,6 +3305,54 @@
                 }
             ],
             "time": "2023-06-21T08:46:11+00:00"
+        },
+        {
+            "name": "moox/skeleton",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/moox-skeleton",
+                "reference": "7228099dbfaa7a6eab35cdcfa29f0769fe0a1aed"
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "spatie/laravel-package-tools": "^1.13.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Moox\\Skeleton\\MooxSkeletonServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Moox\\Skeleton\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moox",
+                    "email": "devs@moox.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This template is used for generating all Moox packages.",
+            "homepage": "https://github.com/mooxphp/",
+            "keywords": [
+                "Filament",
+                "Filament plugin",
+                "Laravel",
+                "Laravel package"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -9830,8 +9878,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "moox/skeleton": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
