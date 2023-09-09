@@ -25,6 +25,13 @@ class MooxPrepareCommand extends Command
         $packagesConfig = json_decode(File::get($packagesJsonPath), true);
 
         foreach ($packagesConfig as $slug => $packageData) {
+            $packageFolderPath = base_path("packages/moox-{$slug}");
+            if (File::exists($packageFolderPath)) {
+                $this->info("Package {$slug} exists, skipping...");
+
+                continue;
+            }
+
             foreach ($prepareConfig['copy'] as $source => $destination) {
                 $destination = $this->replacePlaceholders($destination, $slug, $packageData);
 
@@ -41,17 +48,19 @@ class MooxPrepareCommand extends Command
                     $fileContents = str_replace($search, $replaceValue, $fileContents);
                 }
                 File::put($destination, $fileContents);
+
+                $this->info("Package {$slug} created");
             }
         }
     }
 
     private function replacePlaceholders($string, $slug, $packageData)
     {
-        $resourcesString = implode(', ', array_keys($packageData['resources']));
+        $classString = $packageData['class'] ?? 'DefaultClass';
 
         return str_replace(
-            ['%%SLUG%%', '%%TITLE%%', '%%SHORTDESC%%', '%%DESCRIPTION%%', '%%RESOURCE%%'],
-            [$slug, $packageData['title'], $packageData['shortdesc'], $packageData['description'], $resourcesString],
+            ['%%SLUG%%', '%%TITLE%%', '%%SHORTDESC%%', '%%DESCRIPTION%%', '%%CLASS%%'],
+            [$slug, $packageData['title'], $packageData['shortdesc'], $packageData['description'], $classString],
             $string
         );
     }

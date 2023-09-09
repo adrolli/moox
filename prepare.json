@@ -1,6 +1,6 @@
 {
     "copy": {
-        "packages/moox-skeleton/src/SkeletonServiceProvider.php": "packages/moox-%%SLUG%%/src/%%RESOURCE%%ServiceProvider.php",
+        "packages/moox-skeleton/src/SkeletonServiceProvider.php": "packages/moox-%%SLUG%%/src/%%CLASS%%ServiceProvider.php",
         "packages/moox-skeleton/.gitignore": "packages/moox-%%SLUG%%/.gitignore",
         "packages/moox-skeleton/CHANGELOG.md": "packages/moox-%%SLUG%%/CHANGELOG.md",
         "packages/moox-skeleton/composer.json": "packages/moox-%%SLUG%%/composer.json",
@@ -9,7 +9,8 @@
         "packages/moox-skeleton/SECURITY.md": "packages/moox-%%SLUG%%/SECURITY.md"
     },
     "replace": {
-        "Skeleton": "%%TITLE%%",
+        "Moox Skeleton Package": "%%TITLE%%",
+        "Skeleton": "%%CLASS%%",
         "skeleton": "%%SLUG%%",
         "This template is used for generating all Moox packages.": "%%SHORTDESC%%",
         "If you install it, it will completely work without beeing useful. Guaranteed!": "%%DESCRIPTION%%"
