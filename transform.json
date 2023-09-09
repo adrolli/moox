@@ -17,15 +17,5 @@
             "packages/moox-skeleton/src/SkeletonPlugin.php": "packages/m%%SLUG%%/src/%%ENTITY%%Plugin.php",
         }
     },
-    "replace": {
-		"Moox\Skeleton\SkeletonPlugin.php":
-		"Moox\Core\%%ENTITY%%Plugin.php",
-		"App\Filament\Resources":
-		"Moox\Core\Resources",
-		"App\Http\Controllers\Api":
-		"Moox\Core\Api",
-		"App\Models;":
-		"Moox\Core\Models;",
-        "Moox Skeleton": "Moox Core"
-    }
+    "replace": {}
 }
