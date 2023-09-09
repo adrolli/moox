@@ -1,14 +1,49 @@
 {
     "core": {
         "class": "Core",
-        "title": "Moox Core Package",
+        "title": "Moox Core",
         "shortdesc": "Core plugin for all Moox Filament Plugins",
-        "description": "This Filament 3 plugin is required by most of all Moox plugins, as it provides resources for categories, tags and settings as well as global configuration."
+        "description": "This Filament 3 plugin is required by most of all Moox plugins, as it provides resources for categories, tags and settings as well as global configuration.",
+        "entities": {
+            "Category": true,
+            "Setting": true,
+            "Tag": true
+        },
+        "generate": {
+            "Resources": false,
+            "Models": false,
+            "Migrations": false,
+            "ApiControllers": false,
+            "Relations": false,
+            "Config": false,
+            "Translations": false,
+            "Readme": false
+        }
     },
     "pages": {
         "class": "Pages",
         "title": "Moox Pages",
-        "shortdesc": "That is the shortdesc",
-        "description": "The much longer description."
+        "shortdesc": "Filament CMS, create and manage websites",
+        "description": "the long desc",
+        "namespace": "Moox/Pages",
+        "dependencies": {
+            "mooxphp/core": "^3.0"
+        },
+        "entities": {
+            "Page": true,
+            "PageTemplate": true,
+            "Content": true
+        },
+        "generate": {
+            "Resources": false,
+            "Models": false,
+            "Migrations": false,
+            "ApiControllers": false,
+            "Relations": false,
+            "Config": false,
+            "Translations": false,
+            "Readme": false,
+            "Plugins": true
+        }
     }
 }

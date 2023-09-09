@@ -1,0 +1,31 @@
+{
+    "copy": {
+        "Resources": {
+            "transform/build/app/Filament/Resources/%%ENTITY%%Resource.php": "packages/%%SLUG%%/src/Resources/%%ENTITY%%Resource.php",
+            "transform/build/app/Filament/Resources/%%ENTITY%%Resource": "packages/%%SLUG%%/src/Resources/%%ENTITY%%Resource",
+        },
+        "Models": {
+            "transform/build/app/Models/%%ENTITY%%.php": "packages/%%SLUG%%/src/Models/%%MODEL%%.php"
+        },
+        "Migrations": {
+            "database/migrations/??_create_%%SLUG%%_table": "packages/%%SLUG%%/database/migrations/??_create_%%MIGRATION%%_table"
+        },
+        "ApiControllers": {
+            "transform/build/app/Http/Controllers/Api/%%ENTITY%%Controller.php": "packages/%%SLUG%%/src/Api/%%ENTITY%%Controller.php",
+        },
+        "Plugins": {
+            "packages/moox-skeleton/src/SkeletonPlugin.php": "packages/m%%SLUG%%/src/%%ENTITY%%Plugin.php",
+        }
+    },
+    "replace": {
+		"Moox\Skeleton\SkeletonPlugin.php":
+		"Moox\Core\%%ENTITY%%Plugin.php",
+		"App\Filament\Resources":
+		"Moox\Core\Resources",
+		"App\Http\Controllers\Api":
+		"Moox\Core\Api",
+		"App\Models;":
+		"Moox\Core\Models;",
+        "Moox Skeleton": "Moox Core"
+    }
+}
