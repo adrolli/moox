@@ -8,7 +8,7 @@
             "transform/build/app/Models/%%ENTITY%%.php": "packages/moox-%%SLUG%%/src/Models/%%MODEL%%.php"
         },
         "Migrations": {
-            "database/migrations/??_create_%%SLUG%%_table": "packages/%moox-%SLUG%%/database/migrations/??_create_%%MIGRATION%%_table"
+            "database/migrations/??_create_%%SLUG%%_table": "packages/moox-%%SLUG%%/database/migrations/??_create_%%MIGRATION%%_table"
         },
         "ApiControllers": {
             "transform/build/app/Http/Controllers/Api/%%ENTITY%%Controller.php": "packages/moox-%%SLUG%%/src/Api/%%ENTITY%%Controller.php"
@@ -17,5 +17,8 @@
             "packages/moox-skeleton/src/SkeletonPlugin.php": "packages/moox-%%SLUG%%/src/%%ENTITY%%Plugin.php"
         }
     },
-    "replace": {}
+    "replace": {
+        "SkeletonPlugin": "%%ENTITY%%Plugin",
+        "Skeleton": "%%CLASS%%"
+    }
 }

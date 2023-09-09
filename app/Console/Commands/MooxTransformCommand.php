@@ -32,6 +32,8 @@ class MooxTransformCommand extends Command
 
             foreach ($generate as $section => $isActive) {
                 if (! $isActive) {
+                    $this->info("Skipping section: {$section}");
+
                     continue;
                 }
 
@@ -39,6 +41,8 @@ class MooxTransformCommand extends Command
 
                 foreach ($entities as $entity => $isEntityActive) {
                     if (! $isEntityActive) {
+                        $this->info("Skipping entity: {$entity}");
+
                         continue;
                     }
 
@@ -81,8 +85,8 @@ class MooxTransformCommand extends Command
     private function replacePlaceholders($string, $slug, $packageData, $entity)
     {
         return str_replace(
-            ['%%SLUG%%', '%%TITLE%%', '%%SHORTDESC%%', '%%DESCRIPTION%%', '%%ENTITY%%', '%%MODEL%%', '%%MIGRATION%%'],
-            [$slug, $packageData['title'], $packageData['shortdesc'], $packageData['description'], $entity, $entity, strtolower($entity)],
+            ['%%SLUG%%', '%%CLASS%%', '%%TITLE%%', '%%SHORTDESC%%', '%%DESCRIPTION%%', '%%ENTITY%%', '%%MODEL%%', '%%MIGRATION%%'],
+            [$slug, $packageData['class'], $packageData['title'], $packageData['shortdesc'], $packageData['description'], $entity, $entity, strtolower($entity)],
             $string
         );
     }

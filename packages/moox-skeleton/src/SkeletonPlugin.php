@@ -248,42 +248,6 @@ class SkeletonPlugin implements Plugin
     }
 
     /**
-     * Get the pruning status.
-     */
-    public function getPruning(): ?bool
-    {
-        return $this->pruning ?? config('skeleton.pruning.enabled');
-    }
-
-    /**
-     * Set the pruning status.
-     */
-    public function enablePruning(bool $status = true): static
-    {
-        $this->pruning = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get the pruning retention.
-     */
-    public function getPruningRetention(): ?int
-    {
-        return $this->pruningRetention ?? config('skeleton.pruning.retention_days');
-    }
-
-    /**
-     * Set the pruning retention.
-     */
-    public function pruningRetention(int $pruningRetention): static
-    {
-        $this->pruningRetention = $pruningRetention;
-
-        return $this;
-    }
-
-    /**
      * Get the resource breadcrumb.
      */
     public function getBreadcrumb(): string
