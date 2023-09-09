@@ -49,8 +49,10 @@ class MooxPrepareCommand extends Command
                 }
                 File::put($destination, $fileContents);
 
-                $this->info("Package {$slug} created");
             }
+
+            $this->info("Package {$slug} created");
+
         }
     }
 
