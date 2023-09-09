@@ -17,7 +17,8 @@
             "Relations": false,
             "Config": false,
             "Translations": false,
-            "Readme": false
+            "Readme": false,
+            "Plugins": true
         }
     },
     "pages": {
@@ -25,7 +26,6 @@
         "title": "Moox Pages",
         "shortdesc": "Filament CMS, create and manage websites",
         "description": "the long desc",
-        "namespace": "Moox/Pages",
         "dependencies": {
             "mooxphp/core": "^3.0"
         },

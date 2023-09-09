@@ -44,29 +44,35 @@ class MooxTransformCommand extends Command
 
                     $this->info("Processing entity: {$entity}");
 
-                    foreach ($transformConfig['copy'][$section] as $source => $destination) {
-                        $destinationPath = $this->replacePlaceholders($destination, $slug, $packageData, $entity);
+                    if (isset($transformConfig['copy'][$section])) {
 
-                        // Check for wildcard ?? in source paths (like migrations)
-                        $sourcePath = str_replace('%%ENTITY%%', $entity, $source);
-                        $sourcePaths = glob($sourcePath);
+                        foreach ($transformConfig['copy'][$section] as $source => $destination) {
+                            $destinationPath = $this->replacePlaceholders($destination, $slug, $packageData, $entity);
 
-                        foreach ($sourcePaths as $sourcePath) {
-                            $directory = dirname($destinationPath);
-                            if (! File::exists($directory)) {
-                                File::makeDirectory($directory, 0777, true);
+                            // Check for wildcard ?? in source paths (like migrations)
+                            $sourcePath = str_replace('%%ENTITY%%', $entity, $source);
+                            $sourcePaths = glob($sourcePath);
+
+                            foreach ($sourcePaths as $sourcePath) {
+                                $directory = dirname($destinationPath);
+                                if (! File::exists($directory)) {
+                                    File::makeDirectory($directory, 0777, true);
+                                }
+
+                                File::copy($sourcePath, $destinationPath);
+
+                                $fileContents = File::get($destinationPath);
+                                foreach ($transformConfig['replace'] as $search => $replace) {
+                                    $replaceValue = $this->replacePlaceholders($replace, $slug, $packageData, $entity);
+                                    $fileContents = str_replace($search, $replaceValue, $fileContents);
+                                }
+                                File::put($destinationPath, $fileContents);
                             }
-
-                            File::copy($sourcePath, $destinationPath);
-
-                            $fileContents = File::get($destinationPath);
-                            foreach ($transformConfig['replace'] as $search => $replace) {
-                                $replaceValue = $this->replacePlaceholders($replace, $slug, $packageData, $entity);
-                                $fileContents = str_replace($search, $replaceValue, $fileContents);
-                            }
-                            File::put($destinationPath, $fileContents);
                         }
+                    } else {
+                        $this->warn("No copy entries defined for section: {$section}");
                     }
+
                 }
             }
         }
