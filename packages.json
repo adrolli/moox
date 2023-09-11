@@ -25,14 +25,69 @@
         "class": "Pages",
         "title": "Moox Pages",
         "shortdesc": "Filament CMS, create and manage websites",
-        "description": "the long desc",
+        "description": "A headless (but TALL-stack prepared) Content Management System for Filament and Laravel. Manage pages, partials, contents, page templates and menus.",
         "dependencies": {
             "mooxphp/core": "^3.0"
         },
         "entities": {
+            "Content": true,
+            "ContentTemplate": true,
             "Page": true,
             "PageTemplate": true,
-            "Content": true
+            "PagePartial": true,
+            "PageMenu": true
+        },
+        "generate": {
+            "Resources": false,
+            "Models": false,
+            "Migrations": false,
+            "ApiControllers": false,
+            "Relations": false,
+            "Config": false,
+            "Translations": false,
+            "Readme": false,
+            "Plugins": true
+        }
+    },
+    "posts": {
+        "class": "Posts",
+        "title": "Moox Posts",
+        "shortdesc": "Moox WordPress Posts, Categories and Tags",
+        "description": "A WordPress compatible Blog backend, providing access to Posts (Pages and Custom Post Types), Terms and Taxnomies like Categories and Tags and Custom Fields (with partial support for Advanced Custom Fields, like ACF repeater). Just import your WordPress database tables and start blogging with Laravel and Filament.",
+        "dependencies": {
+            "mooxphp/core": "^3.0"
+        },
+        "entities": {
+            "Post": true,
+            "Term": true,
+            "Taxonomy": true,
+            "PostMeta": true
+        },
+        "generate": {
+            "Resources": false,
+            "Models": false,
+            "Migrations": false,
+            "ApiControllers": false,
+            "Relations": false,
+            "Config": false,
+            "Translations": false,
+            "Readme": false,
+            "Plugins": true
+        }
+    },
+    "pulse": {
+        "class": "Pulse",
+        "title": "Moox Pulse",
+        "shortdesc": "Moox WordPress Posts, Categories and Tags",
+        "description": "A WordPress compatible Blog backend, providing access to Posts (Pages and Custom Post Types), Terms and Taxnomies like Categories and Tags and Custom Fields (with partial support for Advanced Custom Fields, like ACF repeater). Just import your WordPress database tables and start blogging with Laravel and Filament.",
+        "dependencies": {
+            "mooxphp/core": "^3.0"
+        },
+        "entities": {
+            "Post": true,
+            "Term": true,
+            "Taxonomy": true,
+            "PostMeta": true
         },
         "generate": {
             "Resources": false,
