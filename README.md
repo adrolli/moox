@@ -1,6 +1,6 @@
-# W-I-P
+# Moved
 
-This is work-in-progress.
+This project has moved to https://github.com/mooxphp/moox/
 
 ## Installation
 
